@@ -284,9 +284,39 @@
         <section id="programs" class="page-content hidden bg-white pt-12 pb-16">
             <div class="container">
                 <h1 class="font-heading text-5xl font-bold text-primary mb-12 text-center">Our Programs & Pillars</h1>
-                
-                <div class="space-y-16" id="programs-container">
-                    <div class="text-center text-gray-500 py-10">Loading programs...</div>
+                <div class="space-y-16">
+                    <a href="#page-yep" onclick="navigate('page-yep')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-primary md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
+                        <div class="md:w-1/4 mb-6 md:mb-0 text-center">
+                            <img src="YEP1.png" alt="YEP Logo" class="h-24 w-auto mx-auto mb-3">
+                        </div>
+                        <div class="md:w-3/4 text-left">
+                            <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">Youth Excellence Program: Structured Mentorship</h3>
+                            <p class="text-lg mb-4 text-gray-700">**Purpose:** To help young individuals align their career growth and personal development with Islamic values and professional excellence. We aim to cultivate a confident, value-rooted Muslim youth leadership base.</p>
+                            <span class="inline-block bg-accent text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">View Program Details &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="#page-thinkseed" onclick="navigate('page-thinkseed')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-accent md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
+                        <div class="md:w-1/4 mb-6 md:mb-0 text-center">
+                            <img src="TS1.png" alt="ThinkSeed Logo" class="h-24 w-auto mx-auto mb-3">
+                        </div>
+                        <div class="md:w-3/4 text-left">
+                            <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">Expert-Led Courses & Educator Platform</h3>
+                            <p class="text-lg mb-4 text-gray-700">**Purpose:** To enable scholars, educators, and experts (especially *ulamas* and *imams*) to efficiently launch and scale their authentic, high-quality courses.</p>
+                            <span class="inline-block bg-primary text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">View Program Details &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="#page-incubate" onclick="navigate('page-incubate')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-primary md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
+                        <div class="md:w-1/4 mb-6 md:mb-0 text-center">
+                            <img src="IR1.png" alt="Incubate Rizq Logo" class="h-24 w-auto mx-auto mb-3">
+                        </div>
+                        <div class="md:w-3/4 text-left">
+                            <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">Startup & SME Support</h3>
+                            <p class="text-lg mb-4 text-gray-700">**Purpose:** To help Muslim-led startups and traditional businesses move from idea to scale, ensuring stability and sustainability (*halal* growth).</p>
+                            <span class="inline-block bg-accent text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">View Program Details &rarr;</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -497,10 +527,9 @@
 
     <script>
         // --- GOOGLE SHEET DATABASE CONFIGURATION ---
-        // PASTE YOUR 4 CSV LINKS INSIDE THE QUOTES BELOW
+        // PASTE YOUR 3 CSV LINKS INSIDE THE QUOTES BELOW (Programs removed)
         const dbLinks = {
             blogs: "PASTE_BLOGS_CSV_LINK_HERE",
-            programs: "PASTE_PROGRAMS_CSV_LINK_HERE",
             principles: "PASTE_PRINCIPLES_CSV_LINK_HERE",
             team: "PASTE_TEAM_CSV_LINK_HERE"
         };
@@ -543,21 +572,7 @@
             </article>
         `;
 
-        // 2. RENDER PROGRAMS
-        const programTemplate = (item) => `
-            <a href="${item.LinkUrl}" onclick="navigate('${item.LinkUrl.replace('#','')}')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-primary md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
-                <div class="md:w-1/4 mb-6 md:mb-0 text-center">
-                    <img src="${item.Image}" alt="${item.Title}" class="h-24 w-auto mx-auto mb-3">
-                </div>
-                <div class="md:w-3/4 text-left">
-                    <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">${item.Title}</h3>
-                    <p class="text-lg mb-4 text-gray-700">${item.Description}</p>
-                    <span class="inline-block bg-accent text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">${item.LinkText} &rarr;</span>
-                </div>
-            </a>
-        `;
-
-        // 3. RENDER PRINCIPLES
+        // 2. RENDER PRINCIPLES
         const principleTemplate = (item) => `
             <div class="bg-primary/5 p-6 rounded-xl shadow-md border-l-4 border-primary">
                 <p class="font-heading text-2xl mb-4 text-primary">${item.Title}</p>
@@ -567,7 +582,7 @@
             </div>
         `;
 
-        // 4. RENDER TEAM
+        // 3. RENDER TEAM
         const teamTemplate = (item) => `
             <div class="bg-neutral p-6 rounded-xl shadow-lg text-center">
                 <div class="${item.ColorClass || 'bg-primary'} w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">${item.Initials}</div>
@@ -579,7 +594,6 @@
 
         function loadAllData() {
             fetchAndRender(dbLinks.blogs, 'blog-container', blogTemplate);
-            fetchAndRender(dbLinks.programs, 'programs-container', programTemplate);
             fetchAndRender(dbLinks.principles, 'principles-container', principleTemplate);
             fetchAndRender(dbLinks.team, 'team-container', teamTemplate);
         }
@@ -639,7 +653,7 @@
             const initialHash = window.location.hash.substring(1) || 'home';
             navigate(initialHash);
             
-            // NEW: Load Dynamic Data
+            // NEW: Load Dynamic Data (Blogs, Principles, Team only)
             loadAllData();
         });
 
