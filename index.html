@@ -16,12 +16,12 @@
     <style>
         /* Define Custom Colors & Fonts */
         :root {
-            --color-teal: #068d06; /* Updated Primary Color: Dark Green */
-            --color-gold: #001a72; /* Updated Accent Color: Deep Blue */
+            --color-teal: #068d06; /* Primary: Dark Green */
+            --color-gold: #001a72; /* Accent: Deep Blue */
             --color-neutral-light: #F8F8F8; /* Soft Neutral */
             --color-neutral-dark: #333333; /* Charcoal Black */
         }
-        /* UPDATED FONT IMPORTS: Cabin for headings and Montserrat for body text */
+        /* UPDATED FONT IMPORTS */
         @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap');
         
         .font-heading { font-family: 'Cabin', sans-serif; }
@@ -582,13 +582,14 @@
             </div>
         `;
 
-        // 3. RENDER TEAM
+        // 3. RENDER TEAM (UPDATED WITH LINKEDIN)
         const teamTemplate = (item) => `
-            <div class="bg-neutral p-6 rounded-xl shadow-lg text-center">
+            <div class="bg-neutral p-6 rounded-xl shadow-lg text-center flex flex-col h-full">
                 <div class="${item.ColorClass || 'bg-primary'} w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">${item.Initials}</div>
                 <h3 class="font-heading text-xl font-bold text-dark">${item.Name}</h3>
                 <p class="text-primary font-semibold mb-2">${item.Role}</p>
-                <p class="text-sm text-gray-600">${item.Description}</p>
+                <p class="text-sm text-gray-600 mb-4">${item.Description}</p>
+                ${item.LinkedIn ? `<a href="${item.LinkedIn}" target="_blank" class="text-accent font-semibold hover:underline text-sm inline-flex items-center justify-center mt-auto">Know More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>` : ''}
             </div>
         `;
 
