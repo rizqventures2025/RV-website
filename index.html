@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO / Meta -->
     <title>Rizq Ventures — Youth Excellence, ThinkSeed Courses & Incubation</title>
     <link rel="icon" type="image/png" href="RVnoTitle2.png">
     <meta name="description" content="Empower Muslim-led youth, educators and startups with structured mentorship, purpose-driven education, and practical incubation for sustainable growth.">
-    <!-- Load Tailwind CSS -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for aesthetic vectors -->
+    
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
     <style>
         /* Define Custom Colors & Fonts */
         :root {
@@ -64,20 +66,16 @@
 </head>
 <body class="font-body text-dark bg-white">
 
-    <!-- Navbar -->
     <header class="sticky top-0 z-50 bg-white shadow-lg">
         <div class="container py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="#home" class="flex items-center space-x-2" onclick="navigate('home')">
                 <img src="RV1.png" alt="Rizq Ventures Logo" class="h-24 w-auto">
             </a>
             
-            <!-- Mobile Menu Button -->
             <button id="menu-button" class="md:hidden text-primary focus:outline-none">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
             
-            <!-- Desktop Navigation -->
             <nav id="navbar-links" class="hidden md:flex space-x-6 lg:space-x-8 text-lg">
                 <a href="#home" class="nav-btn py-1 text-dark hover:text-primary transition duration-300" onclick="navigate('home')">Home</a>
                 <a href="#about" class="nav-btn py-1 text-dark hover:text-primary transition duration-300" onclick="navigate('about')">About</a>
@@ -90,7 +88,6 @@
             </nav>
         </div>
 
-        <!-- Mobile Menu (Dropdown) -->
         <div id="mobile-menu" class="hidden md:hidden bg-primary text-white pb-4 rounded-b-lg">
             <a href="#home" class="block py-2 px-4 hover:bg-white/10 transition duration-300" onclick="navigate('home'); closeMenu()">Home</a>
             <a href="#about" class="block py-2 px-4 hover:bg-white/10 transition duration-300" onclick="navigate('about'); closeMenu()">About</a>
@@ -104,9 +101,6 @@
     </header>
 
     <main class="min-h-screen pt-4">
-        <!-- Content Sections (Pages) -->
-
-        <!-- 1. Home Page -->
         <section id="home" class="page-content active">
             <div class="bg-primary text-white py-16 sm:py-24 rounded-b-2xl shadow-xl">
                 <div class="container text-center">
@@ -126,7 +120,6 @@
                 </div>
             </div>
 
-            <!-- Why Rizq Ventures -->
             <div class="container py-16 text-center">
                 <h2 class="font-heading text-4xl font-bold text-primary mb-4">Why Rizq Ventures?</h2>
                 <blockquote class="text-2xl italic max-w-4xl mx-auto text-gray-700">
@@ -134,12 +127,10 @@
                 </blockquote>
             </div>
 
-            <!-- Three Pillar Cards (Navigate to New "Coming Soon" Pages) -->
             <div class="bg-neutral py-16">
                 <div class="container">
                     <h2 class="font-heading text-3xl font-bold text-center text-primary mb-12">Our Core Pillars</h2>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <!-- YEP Card -->
                         <a href="#page-yep" onclick="navigate('page-yep')" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 flex flex-col items-center text-center group cursor-pointer block">
                             <img src="YEP1.png" alt="YEP Logo" class="h-22 w-auto mb-4">
                             <p class="text-lg text-gray-600 mb-4">Youth Excellence Program</p>
@@ -147,7 +138,6 @@
                             <span class="text-accent font-semibold group-hover:underline mt-auto">Learn More &rarr;</span>
                         </a>
 
-                        <!-- ThinkSeed Card -->
                         <a href="#page-thinkseed" onclick="navigate('page-thinkseed')" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 flex flex-col items-center text-center group cursor-pointer block">
                             <img src="TS1.png" alt="ThinkSeed Logo" class="h-22 w-auto mb-4">
                             <p class="text-lg text-gray-600 mb-4">Expert-Led Learning Platform</p>
@@ -155,7 +145,6 @@
                             <span class="text-accent font-semibold group-hover:underline mt-auto">Learn More &rarr;</span>
                         </a>
 
-                        <!-- Incubate Rizq Card -->
                         <a href="#page-incubate" onclick="navigate('page-incubate')" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 flex flex-col items-center text-center group cursor-pointer block">
                             <img src="IR1.png" alt="Incubate Rizq Logo" class="h-22 w-auto mb-4">
                             <p class="text-lg text-gray-600 mb-4">Startup & SME Incubation</p>
@@ -166,38 +155,13 @@
                 </div>
             </div>
 
-            <!-- Qur'an & Hadith Anchor -->
             <div class="container py-16">
                 <h2 class="font-heading text-3xl font-bold text-center text-primary mb-12">Our Guiding Principles</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-start">
-                    <!-- Qur'an Reference -->
-                    <div class="bg-primary/5 p-6 rounded-xl shadow-md border-l-4 border-primary">
-                        <p class="font-heading text-2xl mb-4 text-primary">Surah Al-Jumu'ah (62:10)</p>
-                        <p class="text-xl text-dark text-right leading-relaxed mb-4" dir="rtl">
-                            فَإِذَا قُضِيَتِ الصَّلَاةُ فَانتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِن فَضْلِ اللَّهِ
-                        </p>
-                        <p class="text-lg italic text-gray-700">
-                            "When the prayer is finished, disperse in the land and seek the bounty of Allah."
-                        </p>
-                        <p class="mt-4 text-sm font-semibold">
-                            **Takeaway:** Worship comes first, but believers are commanded to work and seek Allah's provision through *halal* means. Deen and dunya go hand in hand.
-                        </p>
-                    </div>
-
-                    <!-- Hadith Reference -->
-                    <div class="bg-primary/5 p-6 rounded-xl shadow-md border-l-4 border-primary">
-                        <p class="font-heading text-2xl mb-4 text-primary">Hadith (Sahih al-Bukhari 1427)</p>
-                        <p class="text-xl text-dark text-right leading-relaxed mb-4" dir="rtl">
-                            الْيَدُ الْعِلْيَا خَيْرٌ مِنَ الْيَدِ السُّفْلَى...
-                        </p>
-                        <p class="text-lg italic text-gray-700">
-                            "The upper hand (giver) is better than the lower hand (taker)..."
-                        </p>
-                        <p class="mt-4 text-sm font-semibold">
-                            **Takeaway:** True *barakah* lies in providing for others after fulfilling our own needs. Rizq Ventures helps youth become self-reliant givers in society, not seekers.
-                        </p>
-                    </div>
+                
+                <div id="principles-container" class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="col-span-2 text-center text-gray-500 italic">Loading principles...</div>
                 </div>
+
                 <div class="text-center mt-12">
                     <a href="#resources" onclick="navigate('resources')" class="text-primary font-semibold hover:underline text-lg flex items-center justify-center">
                         Explore all guiding verses and hadiths <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
@@ -205,33 +169,24 @@
                 </div>
             </div>
 
-            <!-- Ecosystem Process Flow (Navigate to New "Coming Soon" Pages) -->
             <div class="bg-accent text-white py-16">
                 <div class="container">
                     <h2 class="font-heading text-3xl font-bold text-center mb-12">Our Ecosystem: A Journey to Excellence</h2>
                     <div class="flex flex-col md:flex-row justify-center items-stretch space-y-8 md:space-y-0 md:space-x-6 lg:space-x-12">
-                        
-                        <!-- Step 1: Learn (Goes to ThinkSeed Page) -->
                         <a href="#page-thinkseed" onclick="navigate('page-thinkseed')" class="flex-1 bg-black/10 p-6 rounded-xl text-center shadow-lg transition duration-300 hover:bg-black/20 hover:scale-[1.02] cursor-pointer block">
                             <div class="bg-primary w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white font-bold text-2xl mb-4">1</div>
                             <h3 class="text-xl font-heading font-semibold mb-2 underline decoration-transparent hover:decoration-white transition-all">Learn</h3>
                             <p class="text-sm font-light">(ThinkSeed Platform)</p>
                             <p class="text-sm mt-3">Acquire specialized, value-aligned knowledge from expert scholars and industry leaders.</p>
                         </a>
-
                         <div class="hidden md:flex items-center justify-center"><i data-lucide="arrow-right" class="w-8 h-8 text-white"></i></div>
-
-                        <!-- Step 2: Mentorship (Goes to YEP Page) -->
                         <a href="#page-yep" onclick="navigate('page-yep')" class="flex-1 bg-black/10 p-6 rounded-xl text-center shadow-lg transition duration-300 hover:bg-black/20 hover:scale-[1.02] cursor-pointer block">
                             <div class="bg-primary w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white font-bold text-2xl mb-4">2</div>
                             <h3 class="text-xl font-heading font-semibold mb-2 underline decoration-transparent hover:decoration-white transition-all">Mentorship</h3>
                             <p class="text-sm font-light">(YEP Program)</p>
                             <p class="text-sm mt-3">Receive structured, personal guidance to align your career and life goals with purpose.</p>
                         </a>
-
                         <div class="hidden md:flex items-center justify-center"><i data-lucide="arrow-right" class="w-8 h-8 text-white"></i></div>
-
-                        <!-- Step 3: Build & Scale (Goes to Incubate Rizq Page) -->
                         <a href="#page-incubate" onclick="navigate('page-incubate')" class="flex-1 bg-black/10 p-6 rounded-xl text-center shadow-lg transition duration-300 hover:bg-black/20 hover:scale-[1.02] cursor-pointer block">
                             <div class="bg-primary w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white font-bold text-2xl mb-4">3</div>
                             <h3 class="text-xl font-heading font-semibold mb-2 underline decoration-transparent hover:decoration-white transition-all">Build & Scale</h3>
@@ -242,64 +197,47 @@
                 </div>
             </div>
 
-            <!-- Get Involved CTAs -->
             <div class="container py-16 text-center">
                 <h2 class="font-heading text-3xl font-bold text-primary mb-8">Ready to Get Involved?</h2>
-                <!-- REPLACE THE OLD GRID DIV WITH THIS NEW BLOCK -->
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-    
-    <!-- 1. Be a Mentor -->
-    <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
-        <i data-lucide="user-plus" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
-        <h3 class="font-heading text-2xl font-semibold mb-2">Be a Mentor</h3>
-        <p class="text-sm opacity-90">Share your professional and spiritual expertise.</p>
-    </a>
-
-    <!-- 2. Job Seeker -->
-    <a href="https://forms.google.com/your-job-seeker-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
-        <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
-        <h3 class="font-heading text-2xl font-semibold mb-2">Job Seeker</h3>
-        <p class="text-sm opacity-90">We'll help you get a job and build your career.</p>
-    </a>
-
-    <!-- 3. Be a Learner -->
-    <a href="https://forms.google.com/your-learner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
-        <i data-lucide="graduation-cap" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
-        <h3 class="font-heading text-2xl font-semibold mb-2">Be a Learner</h3>
-        <p class="text-sm opacity-90">Enroll in YEP or ThinkSeed courses.</p>
-    </a>
-
-    <!-- 4. Be a Partner -->
-    <a href="https://forms.google.com/your-partner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
-        <i data-lucide="handshake" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
-        <h3 class="font-heading text-2xl font-semibold mb-2">Be a Partner</h3>
-        <p class="text-sm opacity-90">Collaborate with us organizationally.</p>
-    </a>
-
-    <!-- 5. Register Job -->
-    <a href="https://forms.google.com/your-job-opening-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
-        <i data-lucide="building" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
-        <h3 class="font-heading text-2xl font-semibold mb-2">Register Job</h3>
-        <p class="text-sm opacity-90">Post job vacancies and find talent.</p>
-    </a>
-
-    <!-- 6. Support Us -->
-    <a href="https://forms.google.com/your-support-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
-        <i data-lucide="heart" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
-        <h3 class="font-heading text-2xl font-semibold mb-2">Support Us</h3>
-        <p class="text-sm opacity-90">Donate or sponsor our programs.</p>
-    </a>
-</div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                    <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                        <i data-lucide="user-plus" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
+                        <h3 class="font-heading text-2xl font-semibold mb-2">Be a Mentor</h3>
+                        <p class="text-sm opacity-90">Share your professional and spiritual expertise.</p>
+                    </a>
+                    <a href="https://forms.google.com/your-job-seeker-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                        <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
+                        <h3 class="font-heading text-2xl font-semibold mb-2">Job Seeker</h3>
+                        <p class="text-sm opacity-90">We'll help you get a job and build your career.</p>
+                    </a>
+                    <a href="https://forms.google.com/your-learner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                        <i data-lucide="graduation-cap" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
+                        <h3 class="font-heading text-2xl font-semibold mb-2">Be a Learner</h3>
+                        <p class="text-sm opacity-90">Enroll in YEP or ThinkSeed courses.</p>
+                    </a>
+                    <a href="https://forms.google.com/your-partner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                        <i data-lucide="handshake" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
+                        <h3 class="font-heading text-2xl font-semibold mb-2">Be a Partner</h3>
+                        <p class="text-sm opacity-90">Collaborate with us organizationally.</p>
+                    </a>
+                    <a href="https://forms.google.com/your-job-opening-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                        <i data-lucide="building" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
+                        <h3 class="font-heading text-2xl font-semibold mb-2">Register Job</h3>
+                        <p class="text-sm opacity-90">Post job vacancies and find talent.</p>
+                    </a>
+                    <a href="https://forms.google.com/your-support-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                        <i data-lucide="heart" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
+                        <h3 class="font-heading text-2xl font-semibold mb-2">Support Us</h3>
+                        <p class="text-sm opacity-90">Donate or sponsor our programs.</p>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- 2. About Page (RESTORED FULL CONTENT) -->
         <section id="about" class="page-content hidden bg-neutral pt-12 pb-16">
             <div class="container">
                 <h1 class="font-heading text-5xl font-bold text-primary mb-10 text-center">About Rizq Ventures</h1>
-
                 <div class="max-w-4xl mx-auto space-y-12">
-                    <!-- Overview -->
                     <div class="p-6 bg-white rounded-xl shadow-lg">
                         <h2 class="font-heading text-3xl font-semibold text-dark mb-4 border-b pb-2">Organization Overview</h2>
                         <p class="text-lg text-gray-700 leading-relaxed">
@@ -307,7 +245,6 @@
                         </p>
                     </div>
 
-                    <!-- Mission & Vision -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary">
                             <h3 class="font-heading text-2xl font-semibold text-primary mb-3">Our Mission</h3>
@@ -323,7 +260,6 @@
                         </div>
                     </div>
 
-                    <!-- Goals & Model -->
                     <div class="p-6 bg-white rounded-xl shadow-lg">
                         <h3 class="font-heading text-3xl font-semibold text-dark mb-4 border-b pb-2">Organization Model</h3>
                         <div class="md:flex md:space-x-8">
@@ -345,53 +281,16 @@
             </div>
         </section>
 
-        <!-- 3. Programs Pages (List View - Now Clickable) -->
         <section id="programs" class="page-content hidden bg-white pt-12 pb-16">
             <div class="container">
                 <h1 class="font-heading text-5xl font-bold text-primary mb-12 text-center">Our Programs & Pillars</h1>
-                <div class="space-y-16">
-                    <!-- YEP (Clickable Container -> New Page) -->
-                    <a href="#page-yep" onclick="navigate('page-yep')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-primary md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
-                        <div class="md:w-1/4 mb-6 md:mb-0 text-center">
-                            <img src="YEP1.png" alt="YEP Logo" class="h-24 w-auto mx-auto mb-3">
-                        </div>
-                        <div class="md:w-3/4 text-left">
-                            <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">Youth Excellence Program: Structured Mentorship</h3>
-                            <p class="text-lg mb-4 text-gray-700">**Purpose:** To help young individuals align their career growth and personal development with Islamic values and professional excellence. We aim to cultivate a confident, value-rooted Muslim youth leadership base.</p>
-                            <span class="inline-block bg-accent text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">View Program Details &rarr;</span>
-                        </div>
-                    </a>
-
-                    <!-- ThinkSeed (Clickable Container -> New Page) -->
-                    <a href="#page-thinkseed" onclick="navigate('page-thinkseed')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-accent md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
-                        <div class="md:w-1/4 mb-6 md:mb-0 text-center">
-                            <img src="TS1.png" alt="ThinkSeed Logo" class="h-24 w-auto mx-auto mb-3">
-                        </div>
-                        <div class="md:w-3/4 text-left">
-                            <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">Expert-Led Courses & Educator Platform</h3>
-                            <p class="text-lg mb-4 text-gray-700">**Purpose:** To enable scholars, educators, and experts (especially *ulamas* and *imams*) to efficiently launch and scale their authentic, high-quality courses.</p>
-                            <span class="inline-block bg-primary text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">View Program Details &rarr;</span>
-                        </div>
-                    </a>
-
-                    <!-- Incubate Rizq (Clickable Container -> New Page) -->
-                    <a href="#page-incubate" onclick="navigate('page-incubate')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-primary md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
-                        <div class="md:w-1/4 mb-6 md:mb-0 text-center">
-                            <img src="IR1.png" alt="Incubate Rizq Logo" class="h-24 w-auto mx-auto mb-3">
-                        </div>
-                        <div class="md:w-3/4 text-left">
-                            <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">Startup & SME Support</h3>
-                            <p class="text-lg mb-4 text-gray-700">**Purpose:** To help Muslim-led startups and traditional businesses move from idea to scale, ensuring stability and sustainability (*halal* growth).</p>
-                            <span class="inline-block bg-accent text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">View Program Details &rarr;</span>
-                        </div>
-                    </a>
+                
+                <div class="space-y-16" id="programs-container">
+                    <div class="text-center text-gray-500 py-10">Loading programs...</div>
                 </div>
             </div>
         </section>
 
-        <!-- --- NEW DEDICATED PAGES (COMING SOON) --- -->
-
-        <!-- Dedicated Page: YEP -->
         <section id="page-yep" class="page-content hidden bg-white min-h-screen pt-24 pb-16">
             <div class="container text-center">
                 <img src="YEP1.png" alt="YEP Logo" class="h-32 w-auto mx-auto mb-8">
@@ -403,7 +302,6 @@
             </div>
         </section>
 
-        <!-- Dedicated Page: ThinkSeed -->
         <section id="page-thinkseed" class="page-content hidden bg-white min-h-screen pt-24 pb-16">
             <div class="container text-center">
                 <img src="TS1.png" alt="ThinkSeed Logo" class="h-32 w-auto mx-auto mb-8">
@@ -415,7 +313,6 @@
             </div>
         </section>
 
-        <!-- Dedicated Page: Incubate Rizq -->
         <section id="page-incubate" class="page-content hidden bg-white min-h-screen pt-24 pb-16">
             <div class="container text-center">
                 <img src="IR1.png" alt="Incubate Rizq Logo" class="h-32 w-auto mx-auto mb-8">
@@ -427,9 +324,6 @@
             </div>
         </section>
 
-        <!-- --- END NEW PAGES --- -->
-
-        <!-- Blog Section (RESTORED FULL CONTENT) -->
         <section id="blog" class="page-content hidden bg-neutral pt-12 pb-16">
             <div class="container">
                 <h1 class="font-heading text-4xl font-bold text-primary mb-6 text-center">Latest Insights & Updates</h1>
@@ -437,56 +331,12 @@
                     Daily reflections, success stories, and updates from the Rizq Ventures community.
                 </p>
 
-                <!-- Blog Grid Container -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- BLOG POST 1 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
-                        <!-- Blog Image -->
-                        <div class="h-48 bg-gray-200 relative">
-                             <img src="https://placehold.co/600x400/068d06/ffffff?text=Blog+Post+1" alt="Blog Post Image" class="w-full h-full object-cover">
-                             <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">New</div>
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div class="text-sm text-gray-500 mb-2 flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i> Oct 25, 2025</div>
-                            <h3 class="font-heading text-xl font-bold text-dark mb-3">The Importance of Barakah in Business</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Explore how ensuring your earnings are pure can lead to unexpected growth and sustainability in your startup.</p>
-                            <!-- Link to full post (Could be a separate HTML file or a Medium link) -->
-                            <a href="#" class="text-primary font-semibold hover:text-accent mt-auto inline-flex items-center">Read Full Story <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                        </div>
-                    </article>
-
-                    <!-- BLOG POST 2 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
-                        <div class="h-48 bg-gray-200">
-                             <img src="https://placehold.co/600x400/001a72/ffffff?text=Blog+Post+2" alt="Blog Post Image" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div class="text-sm text-gray-500 mb-2 flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i> Oct 24, 2025</div>
-                            <h3 class="font-heading text-xl font-bold text-dark mb-3">Meet Our Newest Cohort</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">We are excited to welcome 50 new learners to the YEP program this fall. See their orientation highlights.</p>
-                            <a href="#" class="text-primary font-semibold hover:text-accent mt-auto inline-flex items-center">Read Full Story <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                        </div>
-                    </article>
-
-                    <!-- BLOG POST 3 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
-                        <div class="h-48 bg-gray-200">
-                             <img src="https://placehold.co/600x400/333333/ffffff?text=Blog+Post+3" alt="Blog Post Image" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div class="text-sm text-gray-500 mb-2 flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i> Oct 23, 2025</div>
-                            <h3 class="font-heading text-xl font-bold text-dark mb-3">ThinkSeed Platform Launch</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Our educator platform is finally live. Here is how scholars can start uploading their courses today.</p>
-                            <a href="#" class="text-primary font-semibold hover:text-accent mt-auto inline-flex items-center">Read Full Story <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                        </div>
-                    </article>
-
+                <div id="blog-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="col-span-3 text-center text-gray-500 italic">Loading blog posts...</div>
                 </div>
             </div>
         </section>
 
-        <!-- Resources Section (RESTORED FULL CONTENT) -->
         <section id="resources" class="page-content hidden bg-neutral pt-12 pb-16">
             <div class="container max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg">
                 <h1 class="font-heading text-4xl font-bold text-primary mb-6 text-center">Resources & Blog</h1>
@@ -509,7 +359,6 @@
             </div>
         </section>
 
-        <!-- Team Section (RESTORED FULL CONTENT) -->
         <section id="team" class="page-content hidden bg-white pt-12 pb-16">
             <div class="container">
                 <h1 class="font-heading text-4xl font-bold text-primary mb-12 text-center">Meet Our Team</h1>
@@ -517,36 +366,10 @@
                     Rizq Ventures is powered by a dedicated team of young professionals, scholars, and industry experts committed to our mission.
                 </p>
 
-                <!-- Mock Team Cards (As per PDF page 18) -->
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Team Member 1: BG is primary, text is white -->
-                    <div class="bg-neutral p-6 rounded-xl shadow-lg text-center">
-                        <div class="bg-primary w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">M.R.</div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Mohamed Rizq</h3>
-                        <p class="text-primary font-semibold mb-2">Founder & Visionary</p>
-                        <p class="text-sm text-gray-600">
-                            Driving the strategic direction and Islamic framing of the entire Rizq ecosystem. Focuses on community impact.
-                        </p>
-                    </div>
-                    <!-- Team Member 2: BG is accent, text is white -->
-                    <div class="bg-neutral p-6 rounded-xl shadow-lg text-center">
-                        <div class="bg-accent w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">E.S.</div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Expert Scholar Name</h3>
-                        <p class="text-primary font-semibold mb-2">Head of Education (ThinkSeed)</p>
-                        <p class="text-sm text-gray-600">
-                            Ensures authenticity and academic excellence across all educational and mentorship content.
-                        </p>
-                    </div>
-                    <!-- Team Member 3: BG is primary, text is white -->
-                    <div class="bg-neutral p-6 rounded-xl shadow-lg text-center">
-                        <div class="bg-primary w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">I.C.</div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Incubation Lead</h3>
-                        <p class="text-primary font-semibold mb-2">Director of Incubation (IR)</p>
-                        <p class="text-sm text-gray-600">
-                            A seasoned industry professional providing strategic guidance and practical support for startups and SMEs.
-                        </p>
-                    </div>
+                <div id="team-container" class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="col-span-3 text-center text-gray-500 italic">Loading team...</div>
                 </div>
+
                 <div class="mt-10 text-center">
                     <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline flex items-center justify-center">
                         Join our team of dedicated mentors <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
@@ -555,7 +378,6 @@
             </div>
         </section>
 
-        <!-- Contact Section (RESTORED FULL CONTENT) -->
         <section id="contact" class="page-content hidden bg-neutral pt-12 pb-16">
             <div class="container max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg">
                 <h1 class="font-heading text-4xl font-bold text-primary mb-6 text-center">Connect With Us</h1>
@@ -583,49 +405,35 @@
             </div>
         </section>
 
-        <!-- 6. Get Involved Landing Page -->
         <section id="get-involved" class="page-content hidden bg-white pt-12 pb-16">
             <div class="container">
                 <h1 class="font-heading text-5xl font-bold text-primary mb-10 text-center">Get Involved</h1>
-                <!-- PASTE THIS NEW GRID BLOCK -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-                    
-                    <!-- 1. Be a Mentor -->
                     <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="user-plus" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Mentor</h3>
                         <p class="text-sm opacity-90">Share your professional and spiritual expertise.</p>
                     </a>
-
-                    <!-- 2. Job Seeker -->
                     <a href="https://forms.google.com/your-job-seeker-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Job Seeker</h3>
                         <p class="text-sm opacity-90">We'll help you get a job and build your career.</p>
                     </a>
-
-                    <!-- 3. Be a Learner -->
                     <a href="https://forms.google.com/your-learner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="graduation-cap" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Learner</h3>
                         <p class="text-sm opacity-90">Enroll in YEP or ThinkSeed courses.</p>
                     </a>
-
-                    <!-- 4. Be a Partner -->
                     <a href="https://forms.google.com/your-partner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="handshake" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Partner</h3>
                         <p class="text-sm opacity-90">Collaborate with us organizationally.</p>
                     </a>
-
-                    <!-- 5. Register Job -->
                     <a href="https://forms.google.com/your-job-opening-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="building" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Register Job</h3>
                         <p class="text-sm opacity-90">Post job vacancies and find talent.</p>
                     </a>
-
-                    <!-- 6. Support Us -->
                     <a href="https://forms.google.com/your-support-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="heart" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Support Us</h3>
@@ -637,11 +445,9 @@
 
     </main>
 
-    <!-- Footer (RESTORED FULL CONTENT + ADDED NEW LINKS) -->
     <footer class="bg-primary text-white pt-12 pb-8 mt-12">
         <div class="container border-t border-white/20 pt-8">
             <div class="grid md:grid-cols-4 gap-8">
-                <!-- Col 1 -->
                 <div class="md:col-span-1">
                     <a href="#home" onclick="navigate('home')">
                         <img src="RV1.png" alt="Rizq Ventures Logo" class="h-20 mb-4">
@@ -650,7 +456,6 @@
                         Empowering purpose, elevating potential, and fostering *halal* livelihoods through structured growth and community impact.
                     </p>
                 </div>
-                <!-- Col 2 -->
                 <div>
                     <h4 class="font-heading text-xl font-semibold mb-4 border-b border-accent pb-1">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
@@ -660,7 +465,6 @@
                         <li><a href="#team" onclick="navigate('team')" class="hover:text-accent transition duration-200">Our Team</a></li>
                     </ul>
                 </div>
-                <!-- Col 3 (UPDATED LINKS) -->
                 <div>
                     <h4 class="font-heading text-xl font-semibold mb-4 border-b border-accent pb-1">Get Involved</h4>
                     <ul class="space-y-2 text-sm">
@@ -672,7 +476,6 @@
                         <li><a href="https://forms.google.com/your-support-form-link" target="_blank" class="hover:text-accent transition duration-200">Support the Cause</a></li>
                     </ul>
                 </div>
-                <!-- Col 4 -->
                 <div>
                     <h4 class="font-heading text-xl font-semibold mb-4 border-b border-accent pb-1">Contact</h4>
                     <address class="space-y-2 text-sm not-italic">
@@ -686,7 +489,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Copyright -->
             <div class="text-center text-xs mt-10 border-t border-white/20 pt-4">
                 &copy; 2025 Rizq Ventures. All rights reserved.
             </div>
@@ -694,6 +496,96 @@
     </footer>
 
     <script>
+        // --- GOOGLE SHEET DATABASE CONFIGURATION ---
+        // PASTE YOUR 4 CSV LINKS INSIDE THE QUOTES BELOW
+        const dbLinks = {
+            blogs: "PASTE_BLOGS_CSV_LINK_HERE",
+            programs: "PASTE_PROGRAMS_CSV_LINK_HERE",
+            principles: "PASTE_PRINCIPLES_CSV_LINK_HERE",
+            team: "PASTE_TEAM_CSV_LINK_HERE"
+        };
+
+        // --- FETCH & PARSE FUNCTION ---
+        function fetchAndRender(url, containerId, renderFunction) {
+            if (!url || url.includes("PASTE_")) return; // Skip if not set up
+            Papa.parse(url, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    const container = document.getElementById(containerId);
+                    if(container) {
+                        container.innerHTML = ''; // Clear loading text
+                        results.data.forEach(item => {
+                            if(item.Title || item.Name) container.innerHTML += renderFunction(item);
+                        });
+                        if(window.lucide) lucide.createIcons();
+                    }
+                }
+            });
+        }
+
+        // --- HTML TEMPLATES ---
+        
+        // 1. RENDER BLOGS
+        const blogTemplate = (item) => `
+            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+                <div class="h-48 bg-gray-200 relative">
+                    <img src="${item.Image}" alt="${item.Title}" class="w-full h-full object-cover">
+                    ${item.Tag ? `<div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">${item.Tag}</div>` : ''}
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-sm text-gray-500 mb-2 flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i> ${item.Date}</div>
+                    <h3 class="font-heading text-xl font-bold text-dark mb-3">${item.Title}</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">${item.Description}</p>
+                    <a href="${item.Link}" target="_blank" class="text-primary font-semibold hover:text-accent mt-auto inline-flex items-center">Read Full Story <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+                </div>
+            </article>
+        `;
+
+        // 2. RENDER PROGRAMS
+        const programTemplate = (item) => `
+            <a href="${item.LinkUrl}" onclick="navigate('${item.LinkUrl.replace('#','')}')" class="block p-8 bg-neutral rounded-xl shadow-lg border-l-8 border-primary md:flex md:space-x-8 items-center cursor-pointer hover:scale-[1.01] transition-transform duration-300">
+                <div class="md:w-1/4 mb-6 md:mb-0 text-center">
+                    <img src="${item.Image}" alt="${item.Title}" class="h-24 w-auto mx-auto mb-3">
+                </div>
+                <div class="md:w-3/4 text-left">
+                    <h3 class="font-heading text-2xl font-semibold mb-3 text-dark">${item.Title}</h3>
+                    <p class="text-lg mb-4 text-gray-700">${item.Description}</p>
+                    <span class="inline-block bg-accent text-white py-2 px-6 rounded-full font-semibold mt-4 cta-button text-sm">${item.LinkText} &rarr;</span>
+                </div>
+            </a>
+        `;
+
+        // 3. RENDER PRINCIPLES
+        const principleTemplate = (item) => `
+            <div class="bg-primary/5 p-6 rounded-xl shadow-md border-l-4 border-primary">
+                <p class="font-heading text-2xl mb-4 text-primary">${item.Title}</p>
+                <p class="text-xl text-dark text-right leading-relaxed mb-4" dir="rtl">${item.ArabicText}</p>
+                <p class="text-lg italic text-gray-700">"${item.Translation}"</p>
+                <p class="mt-4 text-sm font-semibold">**Takeaway:** ${item.Takeaway}</p>
+            </div>
+        `;
+
+        // 4. RENDER TEAM
+        const teamTemplate = (item) => `
+            <div class="bg-neutral p-6 rounded-xl shadow-lg text-center">
+                <div class="${item.ColorClass || 'bg-primary'} w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">${item.Initials}</div>
+                <h3 class="font-heading text-xl font-bold text-dark">${item.Name}</h3>
+                <p class="text-primary font-semibold mb-2">${item.Role}</p>
+                <p class="text-sm text-gray-600">${item.Description}</p>
+            </div>
+        `;
+
+        function loadAllData() {
+            fetchAndRender(dbLinks.blogs, 'blog-container', blogTemplate);
+            fetchAndRender(dbLinks.programs, 'programs-container', programTemplate);
+            fetchAndRender(dbLinks.principles, 'principles-container', principleTemplate);
+            fetchAndRender(dbLinks.team, 'team-container', teamTemplate);
+        }
+
+        // --- EXISTING NAVIGATION & INITIALIZATION LOGIC ---
+
         function initializeIcons() {
              lucide.createIcons();
         }
@@ -746,6 +638,9 @@
             initializeIcons();
             const initialHash = window.location.hash.substring(1) || 'home';
             navigate(initialHash);
+            
+            // NEW: Load Dynamic Data
+            loadAllData();
         });
 
         window.addEventListener('hashchange', () => {
