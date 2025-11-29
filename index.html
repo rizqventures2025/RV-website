@@ -8,9 +8,7 @@
     <meta name="description" content="Empower Muslim-led youth, educators and startups with structured mentorship, purpose-driven education, and practical incubation for sustainable growth.">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
     <style>
@@ -21,7 +19,6 @@
             --color-neutral-light: #F8F8F8; /* Soft Neutral */
             --color-neutral-dark: #333333; /* Charcoal Black */
         }
-        /* UPDATED FONT IMPORTS */
         @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap');
         
         .font-heading { font-family: 'Cabin', sans-serif; }
@@ -35,7 +32,6 @@
         .bg-neutral { background-color: var(--color-neutral-light); }
         .text-dark { color: var(--color-neutral-dark); }
 
-        /* Custom Hover Effect for CTAs */
         .cta-button {
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
@@ -45,14 +41,12 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive Container for Main Content */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
 
-        /* Navigation Button Active State Styling */
         .nav-btn {
             padding-top: 0.25rem;
             padding-bottom: 0.25rem;
@@ -112,8 +106,7 @@
                         <a href="#blog" onclick="navigate('blog')" class="w-full sm:w-auto bg-accent text-white font-semibold py-3 px-8 rounded-full cta-button text-center">
                             Read Daily Blogs
                         </a>
-                        
-                        <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white text-primary font-semibold py-3 px-8 rounded-full cta-button hover:bg-neutral text-center border border-gray-100">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-mentor w-full sm:w-auto bg-white text-primary font-semibold py-3 px-8 rounded-full cta-button hover:bg-neutral text-center border border-gray-100">
                             Be a Mentor
                         </a>
                     </div>
@@ -200,32 +193,32 @@
             <div class="container py-16 text-center">
                 <h2 class="font-heading text-3xl font-bold text-primary mb-8">Ready to Get Involved?</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-                    <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-mentor bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="user-plus" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Mentor</h3>
                         <p class="text-sm opacity-90">Share your professional and spiritual expertise.</p>
                     </a>
-                    <a href="https://forms.google.com/your-job-seeker-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-job-seeker bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Job Seeker</h3>
                         <p class="text-sm opacity-90">We'll help you get a job and build your career.</p>
                     </a>
-                    <a href="https://forms.google.com/your-learner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-learner bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="graduation-cap" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Learner</h3>
                         <p class="text-sm opacity-90">Enroll in YEP or ThinkSeed courses.</p>
                     </a>
-                    <a href="https://forms.google.com/your-partner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-partner bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="handshake" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Partner</h3>
                         <p class="text-sm opacity-90">Collaborate with us organizationally.</p>
                     </a>
-                    <a href="https://forms.google.com/your-job-opening-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-register-job bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="building" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Register Job</h3>
                         <p class="text-sm opacity-90">Post job vacancies and find talent.</p>
                     </a>
-                    <a href="https://forms.google.com/your-support-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-support bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="heart" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Support Us</h3>
                         <p class="text-sm opacity-90">Donate or sponsor our programs.</p>
@@ -401,7 +394,7 @@
                 </div>
 
                 <div class="mt-10 text-center">
-                    <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline flex items-center justify-center">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-mentor text-primary font-semibold hover:underline flex items-center justify-center">
                         Join our team of dedicated mentors <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
                     </a>
                 </div>
@@ -439,32 +432,32 @@
             <div class="container">
                 <h1 class="font-heading text-5xl font-bold text-primary mb-10 text-center">Get Involved</h1>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-                    <a href="https://forms.google.com/your-mentor-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-mentor bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="user-plus" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Mentor</h3>
                         <p class="text-sm opacity-90">Share your professional and spiritual expertise.</p>
                     </a>
-                    <a href="https://forms.google.com/your-job-seeker-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-job-seeker bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Job Seeker</h3>
                         <p class="text-sm opacity-90">We'll help you get a job and build your career.</p>
                     </a>
-                    <a href="https://forms.google.com/your-learner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-learner bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="graduation-cap" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Learner</h3>
                         <p class="text-sm opacity-90">Enroll in YEP or ThinkSeed courses.</p>
                     </a>
-                    <a href="https://forms.google.com/your-partner-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-partner bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="handshake" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Be a Partner</h3>
                         <p class="text-sm opacity-90">Collaborate with us organizationally.</p>
                     </a>
-                    <a href="https://forms.google.com/your-job-opening-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-register-job bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-primary hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="building" class="w-10 h-10 mx-auto mb-3 text-primary group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Register Job</h3>
                         <p class="text-sm opacity-90">Post job vacancies and find talent.</p>
                     </a>
-                    <a href="https://forms.google.com/your-support-form-link" target="_blank" rel="noopener noreferrer" class="bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="link-support bg-neutral p-6 rounded-xl shadow-lg border-t-4 border-accent hover:bg-primary hover:text-white transition duration-300 cta-button group">
                         <i data-lucide="heart" class="w-10 h-10 mx-auto mb-3 text-accent group-hover:text-white"></i>
                         <h3 class="font-heading text-2xl font-semibold mb-2">Support Us</h3>
                         <p class="text-sm opacity-90">Donate or sponsor our programs.</p>
@@ -498,12 +491,12 @@
                 <div>
                     <h4 class="font-heading text-xl font-semibold mb-4 border-b border-accent pb-1">Get Involved</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="https://forms.google.com/your-mentor-form-link" target="_blank" class="hover:text-accent transition duration-200">Be a Mentor</a></li>
-                        <li><a href="https://forms.google.com/your-job-seeker-form-link" target="_blank" class="hover:text-accent transition duration-200">Job Seeker</a></li>
-                        <li><a href="https://forms.google.com/your-learner-form-link" target="_blank" class="hover:text-accent transition duration-200">Be a Learner</a></li>
-                        <li><a href="https://forms.google.com/your-partner-form-link" target="_blank" class="hover:text-accent transition duration-200">Be a Partner</a></li>
-                        <li><a href="https://forms.google.com/your-job-opening-form-link" target="_blank" class="hover:text-accent transition duration-200">Register Job</a></li>
-                        <li><a href="https://forms.google.com/your-support-form-link" target="_blank" class="hover:text-accent transition duration-200">Support the Cause</a></li>
+                        <li><a href="#" target="_blank" class="link-mentor hover:text-accent transition duration-200">Be a Mentor</a></li>
+                        <li><a href="#" target="_blank" class="link-job-seeker hover:text-accent transition duration-200">Job Seeker</a></li>
+                        <li><a href="#" target="_blank" class="link-learner hover:text-accent transition duration-200">Be a Learner</a></li>
+                        <li><a href="#" target="_blank" class="link-partner hover:text-accent transition duration-200">Be a Partner</a></li>
+                        <li><a href="#" target="_blank" class="link-register-job hover:text-accent transition duration-200">Register Job</a></li>
+                        <li><a href="#" target="_blank" class="link-support hover:text-accent transition duration-200">Support the Cause</a></li>
                     </ul>
                 </div>
                 <div>
@@ -526,13 +519,39 @@
     </footer>
 
     <script>
+        // --- CENTRALIZED LINK MANAGEMENT ---
+        // PASTE YOUR GOOGLE FORM LINKS HERE ONCE
+        // These links will automatically update everywhere on the website.
+        const formLinks = {
+            mentor: "https://forms.gle/QtP9UbTm5dSLXA2W8",
+            jobSeeker: "https://forms.gle/mQCUNe1a7PLGkr159",
+            learner: "https://forms.gle/5aBtvU5GjktcvJ3L8",
+            partner: "https://forms.gle/zkVpEHbEmq6LTVGL9",
+            registerJob: "https://forms.gle/8zp3pXPf2518z2sc6",
+            support: "https://forms.gle/aKXpGdQc4YWDzAiB7"
+        };
+
         // --- GOOGLE SHEET DATABASE CONFIGURATION ---
-        // PASTE YOUR 3 CSV LINKS INSIDE THE QUOTES BELOW (Programs removed)
         const dbLinks = {
             blogs: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiQK22f0XCxVrscsAo6NIpkaWg3wpp1fpLh5-FiSdJasp_XcDidsOH8es4XKbF4cIn3uFuxq4Mep4-/pub?gid=0&single=true&output=csv",
             principles: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiQK22f0XCxVrscsAo6NIpkaWg3wpp1fpLh5-FiSdJasp_XcDidsOH8es4XKbF4cIn3uFuxq4Mep4-/pub?gid=201249996&single=true&output=csv",
             team: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiQK22f0XCxVrscsAo6NIpkaWg3wpp1fpLh5-FiSdJasp_XcDidsOH8es4XKbF4cIn3uFuxq4Mep4-/pub?gid=1620445781&single=true&output=csv"
         };
+
+        // --- LINK INJECTION LOGIC ---
+        function updateLinks() {
+            // Helper to update all elements with a specific class
+            const setLinks = (className, url) => {
+                document.querySelectorAll('.' + className).forEach(el => el.href = url);
+            };
+
+            setLinks('link-mentor', formLinks.mentor);
+            setLinks('link-job-seeker', formLinks.jobSeeker);
+            setLinks('link-learner', formLinks.learner);
+            setLinks('link-partner', formLinks.partner);
+            setLinks('link-register-job', formLinks.registerJob);
+            setLinks('link-support', formLinks.support);
+        }
 
         // --- FETCH & PARSE FUNCTION ---
         function fetchAndRender(url, containerId, renderFunction) {
@@ -582,7 +601,7 @@
             </div>
         `;
 
-        // 3. RENDER TEAM (UPDATED WITH LINKEDIN)
+        // 3. RENDER TEAM
         const teamTemplate = (item) => `
             <div class="bg-neutral p-6 rounded-xl shadow-lg text-center flex flex-col h-full">
                 <div class="${item.ColorClass || 'bg-primary'} w-24 h-24 mx-auto rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">${item.Initials}</div>
@@ -654,7 +673,10 @@
             const initialHash = window.location.hash.substring(1) || 'home';
             navigate(initialHash);
             
-            // NEW: Load Dynamic Data (Blogs, Principles, Team only)
+            // NEW: Update all form links
+            updateLinks();
+
+            // NEW: Load Dynamic Data
             loadAllData();
         });
 
